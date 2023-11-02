@@ -19,4 +19,13 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+fun generateStudentsData() : List<Student> {
+    return listOf(
+        Student(name = "Rambu", hobby = "Memancing"),
+        Student(name = "Aziz", hobby = "Mbego"),
+        Student(name = "Darel", hobby = "Ngopi"),
+        Student(name = "Wildan", hobby = "Putus Nyambung"),
+        Student(name = "Yodhim", hobby = "Nebeng")
+    )
+}
 }
