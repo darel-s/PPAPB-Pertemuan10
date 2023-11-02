@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        var adapterStudent = StudentAdapter()
+        var adapterStudent = StudentAdapter(generateStudentsData())
         with(binding) {
             rvStudent.apply {
                 adapter = adapterStudent
