@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.example.recyclerview_pertemuan10"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.recyclerview_pertemuan10"
         minSdk = 27
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
