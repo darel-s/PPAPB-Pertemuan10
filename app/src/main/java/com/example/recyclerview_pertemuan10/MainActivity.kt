@@ -2,6 +2,7 @@ package com.example.recyclerview_pertemuan10
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.recyclerview_pertemuan10.databinding.ActivityMainBinding
 
@@ -11,7 +12,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        var adapterStudent = StudentAdapter(generateStudentsData())
+        var adapterStudent = StudentAdapter(generateStudentsData()) {
+            student ->
+            Toast.makeText(this@MainActivity, "You clicked on ${student.name}", Toast.LENGTH_SHORT).show()
+        }
         with(binding) {
             rvStudent.apply {
                 adapter = adapterStudent

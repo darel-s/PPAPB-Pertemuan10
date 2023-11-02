@@ -5,13 +5,20 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclerview_pertemuan10.databinding.ItemStudentBinding
 
-class StudentAdapter(private val listStudent: List<Student>) : RecyclerView.Adapter<StudentAdapter.ItemStudentViewHolder>() {
+typealias OnClickStudent = (Student) -> Unit
+
+class StudentAdapter(private val listStudent: List<Student>, private val onClickStudent: OnClickStudent) :
+    RecyclerView.Adapter<StudentAdapter.ItemStudentViewHolder>() {
 
     inner class ItemStudentViewHolder(private val binding: ItemStudentBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(data: Student) {
             with(binding) {
                 nameTxt.text = data.name
                 hobbyTxt.text = data.hobby
+
+                itemView.setOnClickListener {
+                    onClickStudent(data)
+                }
             }
         }
     }
